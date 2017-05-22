@@ -1,0 +1,43 @@
+{
+  "name": "quickshare",
+  "version": "1.0.0",
+  "description": "A NativeScript-built iOS and Android app for peer to peer file transfers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quickshare/quickshare.git"
+  },
+  "keywords": [
+    "NativeScript"
+  ],
+  "author": "Harsha Vamsi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quickshare/quickshare/issues"
+  },
+  "homepage": "https://github.com/quickshare/quickshare.git",
+  "nativescript": {
+    "id": "com.quickshare.android",
+    "tns-ios": {
+      "version": "2.5.0"
+    },
+    "tns-android": {
+      "version": "3.0.0"
+    }
+  },
+  "dependencies": {
+    "nativescript-background-http": "^3.0.0",
+    "nativescript-imagepicker": "^3.0.1",
+    "nativescript-loading-indicator": "^2.3.2",
+    "nativescript-permissions": "^1.2.3",
+    "nativescript-photoviewer": "^1.2.0",
+    "nativescript-plugin-firebase": "^3.11.4",
+    "nativescript-theme-core": "^1.0.4",
+    "tns-core-modules": "2.5.0"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.10.4",
+    "babel-types": "6.11.1",
+    "babylon": "6.8.2",
+    "lazy": "1.0.11"
+  }
+}

@@ -1,0 +1,31 @@
+Label {
+    margin: 10;
+}
+
+.font {
+    color: #1366af;
+    font-size: 20px;
+    padding-bottom: 20;
+}
+.fonted {
+    color: #1366af;
+    font-size: 20px;
+}
+
+.btnsize {
+    height: 60;
+}
+.btnxsize{
+    height:100;
+}
+.displayimg {
+    margin-left: 5;
+}
+
+.inputs {
+    padding-bottom: 20;
+}
+
+.titles {
+    text-align: right
+}

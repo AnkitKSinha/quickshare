@@ -1,0 +1,72 @@
+<Page loaded="pageLoaded">
+    <Page.actionBar >
+        <ActionBar class="bg" title="quickshare">
+            <ActionItem tap="settings" android.systemIcon="ic_menu" android.position="actionBar" text="Settings" android.position="popup"/>
+            <ActionItem tap="logout" android.systemIcon="ic_menu" android.position="actionBar" text="Logout" android.position="popup"/>
+
+        </ActionBar>
+    </Page.actionBar>
+    <TabView class="tab-view">
+        <TabView.items>
+            <TabViewItem title="Transfer">
+                <TabViewItem.view>
+                    <ScrollView>
+                        <StackLayout orientation="vertical" class="form">
+                            <StackLayout class="input-field">
+                                <Label class="text-left font" text="Send to"/>
+                                <TextField id="username" text="{{ username }}" hint="Username" type="text" autocorrect="false" autocapitalizationType="none" class="input"/>
+                                <StackLayout class="hr-light"></StackLayout>
+                                <Label class="text-left font" text="Message"/>
+                                <TextField id="message" text="{{ message }}" hint="Message(optional)" type="text" autocorrect="false" autocapitalizationType="none" class="input"/>
+                                <StackLayout class="hr-light"></StackLayout>
+                            </StackLayout>
+                            <ListView items="{{ uploadItems }}">
+                                <ListView.itemTemplate>
+                                    <GridLayout columns="180, auto" rows="*, *" class="cell-view">
+                                        <Image height="200" src="{{ thumb }}"  tap="listitem" class="displayimg"/>
+                                        <Button text="Send" row="0" col="1" tap="sendImg" img="{{ thumb }}" class="btn btn-primary btnsize"/>
+                                    </GridLayout>
+                                </ListView.itemTemplate>
+                            </ListView>
+                            <Button text="Choose Image" tap="onSelectSingleTap" class="btn btn-primary btnsize"/>
+
+                        </StackLayout>
+                    </ScrollView>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Recent">
+                <TabViewItem.view>
+
+                    <StackLayout rows="*, auto, auto" class="pick-page">
+                        <Label class="text-center fonted" row="0" col="1" text="{{ labeltext.name }}"/>
+                        <Button text="Delete all" tap="deleteall" class="btn btn-outline btnsize" isEnabled="{{ enabled.enable }}"/>
+                        <ListView items="{{ uploadedItems }}">
+                            <ListView.itemTemplate>
+                                <GridLayout columns="180,auto" rows="*,*" class="cell-view">
+                                    <Label class="text-right font" row="0" col="1" text="{{ sender, 'From ' + sender }}"/>
+                                    <Image height="200" src="{{ thumb }}"  tap="viewimage" class="displayimg"/>
+                                    <Button text="Delete" tap="deleteitem" img="{{ name }}" sender="{{ sender }}" path="{{ thumb }}" col="1" class="btn btn-primary btnsize"/>
+                                </GridLayout>
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+            <TabViewItem title="Files">
+                <TabViewItem.view>
+
+                    <StackLayout rows="*, auto, auto" class="pick-page">
+                        <Button text="Delete all" tap="deleteall" class="btn btn-outline btnsize" isEnabled="{{ enabled.enable }}"/>
+                        <ListView items="{{ imageItems }}">
+                            <ListView.itemTemplate>
+                                <GridLayout columns="180, auto" rows="*, *" class="cell-view">
+                                    <Button text="{{ foldername }}" tap="listitem" class="btn btn-primary btnxsize"/>
+                                </GridLayout>
+                            </ListView.itemTemplate>
+                        </ListView>
+                    </StackLayout>
+                </TabViewItem.view>
+            </TabViewItem>
+        </TabView.items>
+    </TabView>
+</Page>
